@@ -1,0 +1,315 @@
+:root {
+    /* Coffee Pastel Palette (Light) */
+    --bg-color: #FDF6EC;       /* Cream / Milk Foam */
+    --card-bg: #FFF8F0;        /* White/lighter cream */
+    --text-primary: #2C1A0F;   /* Dark Espresso (Almost Black) */
+    --text-secondary: #5C4033; /* Dark Roast */
+    --accent: #D4A373;         /* Latte */
+    --accent-hover: #BC8A5F;   /* Darker Latte */
+    --white: #FFFFFF;
+    --shadow-color: var(--text-primary);
+    
+    --font-heading: 'Space Mono', monospace; /* Tech/Retro feel */
+    --font-body: 'Inter', sans-serif;
+    
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --border-radius: 8px;      /* Slightly sharper */
+    --border-width: 3px;       /* Thick borders */
+    --shadow-offset: 6px;      /* Deep hard shadow */
+}
+
+/* Dark Mode Overrides - IMPROVED COLORS */
+body.dark-mode {
+    --bg-color: #1F1B17;       /* Warm Charcoal (neutral, not too brown) */
+    --card-bg: #2A1F1A;        /* Mocha Brown (lighter than bg for contrast) */
+    --text-primary: #F5E6D3;   /* Warm Cream (softer than pure white) */
+    --text-secondary: #C9A882; /* Caramel (warm, readable secondary text) */
+    --accent: #C17B4A;         /* Terracotta Coffee (vibrant but warm) */
+    --accent-hover: #E69F6B;   /* Lighter Caramel (brighter on hover) */
+    --white: #2C2520;          /* Softer Taupe for cards */
+    --shadow-color: #0D0907;   /* Deep Coffee Black (rich shadow) */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    background-image: radial-gradient(var(--text-secondary) 1px, transparent 1px);
+    background-size: 20px 20px; /* Dot pattern background */
+    overflow-x: hidden; /* Prevent horizontal scroll from shadows */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+    /* Extra padding on the right to accommodate the hard shadows */
+    padding-right: var(--shadow-offset);
+}
+
+/* Header Section */
+.profile-header {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: var(--white);
+    border: var(--border-width) solid var(--text-primary);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color);
+    border-radius: var(--border-radius);
+    position: relative;
+    width: calc(100% - var(--shadow-offset));
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: var(--accent);
+    border: 2px solid var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0px 0px var(--text-primary);
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 0px var(--text-primary);
+}
+
+.theme-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px var(--text-primary);
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border-radius: var(--border-radius); /* Square with rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin: 0 auto var(--spacing-md);
+    border: var(--border-width) solid var(--text-primary);
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    word-break: break-word;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    background: var(--bg-color);
+    border: 2px solid var(--text-primary);
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Main Content Grid */
+.content-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--text-primary);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    width: calc(100% - var(--shadow-offset));
+}
+
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0px 0px var(--shadow-color);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    border-bottom: var(--border-width) solid var(--text-primary);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    display: inline-block;
+    background: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border: var(--border-width) solid var(--text-primary);
+    /* On mobile, we keep it contained */
+    margin-left: 0; 
+    font-size: 1.2rem;
+}
+
+/* Hobby List */
+.hobby-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.hobby-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border: 2px solid var(--text-primary);
+    border-radius: var(--border-radius);
+    background: var(--bg-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hobby-list li:hover {
+    background-color: var(--white);
+}
+
+.icon {
+    font-size: 1.2rem;
+    background: var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid var(--text-primary);
+}
+
+.details h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.details p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Contact Button */
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    border: var(--border-width) solid var(--text-primary);
+    transition: all 0.2s;
+    margin-top: var(--spacing-md);
+    box-shadow: 4px 4px 0px 0px var(--accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    background: var(--white);
+    border: var(--border-width) solid var(--text-primary);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color);
+    border-radius: var(--border-radius);
+    width: calc(100% - var(--shadow-offset));
+    margin-bottom: var(--spacing-lg);
+    transition: background-color 0.3s ease;
+}
+
+/* RESPONSIVE LAYOUTS */
+
+/* Tablet & Desktop (>= 768px) */
+@media (min-width: 768px) {
+    body {
+        padding: var(--spacing-lg);
+    }
+
+    .container {
+        padding-right: 0;
+    }
+
+    h1 { font-size: 2.5rem; }
+    .avatar-placeholder { width: 120px; height: 120px; font-size: 2.5rem; }
+    
+    h2 {
+        margin-left: -1.5rem; /* Re-introduce the sticker overlap look on larger screens */
+        transform: rotate(-1deg);
+        font-size: 1.5rem;
+    }
+
+    .card, .profile-header, footer {
+        width: 100%;
+    }
+
+    .card { padding: var(--spacing-lg); }
+
+    .hobby-list li {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .content-grid {
+        grid-template-columns: 5fr 4fr; /* 55% / 45% split */
+        grid-template-areas: 
+            "about hobbies"
+            "contact hobbies";
+        align-items: start;
+    }
+
+    .about { grid-area: about; }
+    .hobbies { grid-area: hobbies; }
+    .contact { grid-area: contact; }
+}
