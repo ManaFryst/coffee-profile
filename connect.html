@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect With Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Links Card -->
+        <section class="card links-card">
+            <h2>My Links</h2>
+            <div class="links-container">
+                <!-- Example links - replace with your actual links -->
+                <a href="https://github.com/manafryst" class="link-item" target="_blank" rel="noopener">
+                    <span class="link-icon">🐙</span>
+                    <div class="link-details">
+                        <h3>GitHub</h3>
+                        <p>Check out my projects</p>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+
+                <a href="https://linkedin.com/in/darren-h-426013388" class="link-item" target="_blank" rel="noopener">
+                    <span class="link-icon">💼</span>
+                    <div class="link-details">
+                        <h3>LinkedIn</h3>
+                        <p>Professional network</p>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+
+                <a href="https://twitter.com/DarrenAbhi07_" class="link-item" target="_blank" rel="noopener">
+                    <span class="link-icon">🐦</span>
+                    <div class="link-details">
+                        <h3>Twitter</h3>
+                        <p>Follow my thoughts</p>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+
+                <a href="mailto:maybedarren07@gmail.com" class="link-item">
+                    <span class="link-icon">✉️</span>
+                    <div class="link-details">
+                        <h3>Email</h3>
+                        <p>Drop me a message</p>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+            
+            <!-- Back button -->
+            <a href="index.html" class="btn btn-secondary">← Back to Profile</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Darren A. Built with coffee & code.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Load saved theme from main page
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark-mode') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>
